@@ -1,61 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ordered and Unordered List</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: white;
-            margin: 40px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ordered and Unordered List</title>
 
-        .container {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 20px 25px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        h2{
-            text-align: center;
-        }
+body{
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    background:radial-gradient(circle at top center, rgba(255,255,255,0.9),rgba(240,246,252,0.75),rgba(225,235,245,0.85)),url("img10.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
 
-    </style>
+.wrapper{
+    max-width: 1100px;
+    width: 100%;
+}
+
+.top-titles{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 30px;
+}
+
+.top-titles h2{
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #2b6cb0;
+}
+
+.container{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.container::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: rgba(180,200,220,0.6);
+    transform: translateX(-50%);
+}
+
+.card{
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 36px 34px;
+    box-shadow:0 35px 70px rgba(0,0,0,0.18),inset 0 0 0 1px rgba(255,255,255,0.6);
+}
+
+.sub-title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #dbeafe;
+    padding-bottom: 8px;
+}
+
+ol, ul{
+    padding-left: 22px;
+}
+
+ol li, ul li{
+    font-size: 16px;
+    color: #374151;
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+ol li::marker{
+    font-weight: bold;
+    color: #2563eb;
+}
+
+ul li::marker{
+    color: #2563eb;
+}
+
+@media (max-width: 768px){
+    .top-titles,
+    .container{
+        grid-template-columns: 1fr;
+    }
+    .container::before{
+        display: none;
+    }
+}
+</style>
 </head>
+
 <body>
-    <div class="container">
-       <h2> Ordered List</h2>
-       <h3> Daily Task</h3>
-       <ol> 
-           <li> Wake up at 7:00 clock</li>
-           <li> Exercise for 30 minutes </li>
-           <Li> After that Fresh Up </Li>
-           <li> Going for college at 8 A.M </li>
-           <li>Work on assignments</li>
-           <li> Read book before sleeping</li>
-       </ol>
-       <br>
-   
-       <h2> Unordered List</h2>
-       <h3>My Hobbies & Interests</h3>
-       <ul>
-           <li>Listening to music</li>
-           <li>Coding and learning new technologies</li>
-           <li>Playing cricket</li>
-           <li>Watching movies</li>
-           <li>Traveling and exploring new places</li>
-           <li>Photography</li>
-       </ul> 
+
+<div class="wrapper">
+
+    <div class="top-titles">
+        <h2>Ordered List</h2>
+        <h2>Unordered List</h2>
     </div>
-    
+
+    <div class="container">
+
+        <div class="card">
+            <div class="sub-title">Daily Task</div>
+            <ol>
+                <li>Wake up at 7:00 AM</li>
+                <li>Exercise for 30 minutes</li>
+                <li>Fresh up</li>
+                <li>Go to college at 8:00 AM</li>
+                <li>Work on assignments</li>
+                <li>Read book before sleeping</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <div class="sub-title">My Hobbies & Interests</div>
+            <ul>
+                <li>Listening to music</li>
+                <li>Coding and learning new technologies</li>
+                <li>Playing cricket</li>
+                <li>Watching movies</li>
+                <li>Traveling and exploring new places</li>
+                <li>Photography</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
 </body>
 </html>
